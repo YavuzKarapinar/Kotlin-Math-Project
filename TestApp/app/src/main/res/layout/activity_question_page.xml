@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuestionPageActivity">
+
+    <TextView
+        android:id="@+id/remainingTime"
+        android:layout_width="215dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="39dp"
+        android:gravity="center"
+        android:text="Süre: "
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/soruText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/soruText"
+        android:layout_width="284dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="70dp"
+        android:text="Soru: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputAnswer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remainingTime" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="137dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="219dp"
+        android:onClick="nextButtonClick"
+        android:text="SONRAKİ"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputAnswer" />
+
+    <EditText
+        android:id="@+id/inputAnswer"
+        android:layout_width="171dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="61dp"
+        android:ems="10"
+        android:hint="Cevap Giriniz:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/soruText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
