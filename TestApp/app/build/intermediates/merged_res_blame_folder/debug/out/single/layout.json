@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.example.testapp-mergeDebugResources-28:/layout/activity_main.xml",
+        "source": "com.example.testapp-main-31:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\yavuz\\.gradle\\daemon\\7.5\\com.example.testapp-mergeDebugResources-28:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\yavuz\\.gradle\\daemon\\7.5\\com.example.testapp-main-31:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\yavuz\\.gradle\\daemon\\7.5\\com.example.testapp-mergeDebugResources-28:\\layout\\activity_question_page.xml",
+        "source": "C:\\Users\\yavuz\\.gradle\\daemon\\7.5\\com.example.testapp-main-31:\\layout\\activity_question_page.xml"
+    },
+    {
+        "merged": "com.example.testapp-mergeDebugResources-28:/layout/activity_end.xml",
+        "source": "com.example.testapp-main-31:/layout/activity_end.xml"
+    }
+]
