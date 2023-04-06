@@ -14,8 +14,11 @@ import kotlin.random.Random
 
 class QuestionPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuestionPageBinding
-    private lateinit var math : String
-    private lateinit var shared : SharedPreferences
+    private var math: String = ""
+    private lateinit var shared: SharedPreferences
+    private lateinit var input : String
+    var correctAnsNumber = 0
+    var wrongAnsNumber = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,29 +83,31 @@ class QuestionPageActivity : AppCompatActivity() {
 
     fun nextButtonClick(view: View) {
         shared = this.getSharedPreferences("com.example.testapp", MODE_PRIVATE)
-        var correctAnsNumber = 0;
-        var wrongAnsNumber = 0;
         var isEqual = isMathEqualToInput()
 
+        if (isEqual && input.equals("")) {
+            Toast.makeText(this@QuestionPageActivity, "Cevabınızı boş bıraktınız!", Toast.LENGTH_LONG).show()
+        }
         if (isEqual) {
             Toast.makeText(this@QuestionPageActivity, "Cevabınız doğru!", Toast.LENGTH_LONG).show()
-            correctAnsNumber++;
+            correctAnsNumber++
         } else {
             Toast.makeText(this@QuestionPageActivity, "Cevabınız yanlış!", Toast.LENGTH_LONG).show()
-            wrongAnsNumber++;
+            wrongAnsNumber++
         }
+
+        println(wrongAnsNumber)
 
         shared.edit().putString("correctAnsNum", correctAnsNumber.toString()).apply()
         shared.edit().putString("wrongAnsNum", wrongAnsNumber.toString()).apply()
     }
 
-    fun isMathEqualToInput() : Boolean {
-        var input = binding.inputAnswer.text.toString()
+    fun isMathEqualToInput(): Boolean {
+        input = binding.inputAnswer.text.toString()
+
+        var isEqual = input.equals(math)
         math = makingMath()
 
-        if(!input.equals(""))
-            return input.equals(math)
-
-        return false
+        return isEqual
     }
 }

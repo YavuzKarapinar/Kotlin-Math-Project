@@ -19,5 +19,4 @@ class Question {
             return sayi1.toFloat() / sayi2.toFloat()
         }
     }
-
 }
